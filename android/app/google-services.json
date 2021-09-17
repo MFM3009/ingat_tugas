@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "982287669500",
+    "project_id": "ingat-tugas",
+    "storage_bucket": "ingat-tugas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982287669500:android:169733e1ae2f6f9e411f79",
+        "android_client_info": {
+          "package_name": "com.ingattugas.ingat_tugas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982287669500-se0p31306h7j0kp8r2k10ait8glvvgue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ingattugas.ingat_tugas",
+            "certificate_hash": "88db96850808dfb5bafe8d18ec24c931d60b069e"
+          }
+        },
+        {
+          "client_id": "982287669500-md2asc7qqfssihuke5t0tlfudpcsogql.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL6WQ-8XzhZ3_4K7_vUh2O84QLTg-dfCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982287669500-md2asc7qqfssihuke5t0tlfudpcsogql.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
