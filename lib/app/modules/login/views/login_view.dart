@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ingat_tugas/app/modules/home/views/home_view.dart';
+import 'package:ingat_tugas/app/modules/register/views/register_view.dart';
 import 'package:ingat_tugas/app/routes/app_pages.dart';
+import 'package:ingat_tugas/app/utils/navbar.dart';
 
 import '../controllers/login_controller.dart';
 
@@ -16,8 +18,28 @@ class LoginView extends GetView<LoginController> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
               color: Colors.red[900],
+              child: Container(
+                padding: EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width,
+                height: 300,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'Aplikasi MengNugas',
+                        style: GoogleFonts.poppins(
+                            color: Colors.white, fontSize: 22),
+                      ),
+                    ),
+                    Image.asset(
+                      'assets/image/login.png',
+                      width: 200,
+                    )
+                  ],
+                ),
+              ),
             ),
             SizedBox.expand(
               child: DraggableScrollableSheet(
@@ -87,7 +109,7 @@ class LoginView extends GetView<LoginController> {
                           height: 25,
                         ),
                         ElevatedButton(
-                          onPressed: () => Get.offAll(HomeView(),
+                          onPressed: () => Get.offAll(Navbar(),
                               transition: Transition.fadeIn),
                           child: Center(
                             child: Text(
@@ -98,7 +120,7 @@ class LoginView extends GetView<LoginController> {
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.red[500],
+                            primary: Colors.red[900],
                             padding: EdgeInsets.symmetric(vertical: 20),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15),
@@ -116,7 +138,7 @@ class LoginView extends GetView<LoginController> {
                               style: GoogleFonts.poppins(color: Colors.grey),
                             ),
                             TextButton(
-                              onPressed: () {},
+                              onPressed: () => Get.to(RegisterView()),
                               child: Text(
                                 'Register',
                                 style: GoogleFonts.poppins(

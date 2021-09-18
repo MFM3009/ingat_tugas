@@ -30,7 +30,7 @@ class _NavbarState extends State<Navbar> {
       bottomNavigationBar: BottomNavigationBar(
         selectedFontSize: 10.0,
         unselectedFontSize: 10.0,
-        selectedItemColor: Colors.deepOrange,
+        selectedItemColor: Colors.red[900],
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
         items: <BottomNavigationBarItem>[
@@ -40,11 +40,7 @@ class _NavbarState extends State<Navbar> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications),
-            label: 'Notification',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_rounded),
-            label: 'Cart',
+            label: 'Tugas',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_rounded),
