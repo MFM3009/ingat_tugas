@@ -1,9 +1,15 @@
 import 'package:get/get.dart';
 
+import 'package:ingat_tugas/app/modules/admin/bindings/admin_binding.dart';
+import 'package:ingat_tugas/app/modules/admin/views/admin_view.dart';
 import 'package:ingat_tugas/app/modules/home/bindings/home_binding.dart';
 import 'package:ingat_tugas/app/modules/home/views/home_view.dart';
+import 'package:ingat_tugas/app/modules/jadwal/bindings/jadwal_binding.dart';
+import 'package:ingat_tugas/app/modules/jadwal/views/jadwal_view.dart';
 import 'package:ingat_tugas/app/modules/login/bindings/login_binding.dart';
 import 'package:ingat_tugas/app/modules/login/views/login_view.dart';
+import 'package:ingat_tugas/app/modules/member/bindings/member_binding.dart';
+import 'package:ingat_tugas/app/modules/member/views/member_view.dart';
 import 'package:ingat_tugas/app/modules/profile/bindings/profile_binding.dart';
 import 'package:ingat_tugas/app/modules/profile/views/profile_view.dart';
 import 'package:ingat_tugas/app/modules/register/bindings/register_binding.dart';
@@ -43,6 +49,21 @@ class AppPages {
       name: _Paths.REGISTER,
       page: () => RegisterView(),
       binding: RegisterBinding(),
+    ),
+    GetPage(
+      name: _Paths.JADWAL,
+      page: () => JadwalView(),
+      binding: JadwalBinding(),
+    ),
+    GetPage(
+      name: _Paths.MEMBER,
+      page: () => MemberView(),
+      binding: MemberBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADMIN,
+      page: () => AdminView(),
+      binding: AdminBinding(),
     ),
   ];
 }

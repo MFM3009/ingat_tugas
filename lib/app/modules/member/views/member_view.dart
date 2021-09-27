@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/tugas_controller.dart';
+import '../controllers/member_controller.dart';
 
-class TugasView extends GetView<TugasController> {
+class MemberView extends GetView<MemberController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red[900],
-        title: Text('Tugas Perkuliahan'),
+        title: Text('MemberView'),
         centerTitle: true,
       ),
       body: Center(
         child: Text(
-          'TugasView is working',
+          'MemberView is working',
           style: TextStyle(fontSize: 20),
         ),
       ),
