@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ingat_tugas/app/modules/jadwal/views/jadwal_view.dart';
+import 'package:ingat_tugas/app/modules/member/views/member_view.dart';
+import 'package:ingat_tugas/app/modules/tugas/views/tugas_view.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -76,106 +79,115 @@ class HomeView extends GetView<HomeController> {
                     ),
                     child: ListView(
                       children: [
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 20),
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          width: MediaQuery.of(context).size.width,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black12,
-                                  spreadRadius: 0.1,
-                                  blurRadius: 7,
-                                  offset: Offset(1, 3),
+                        InkWell(
+                          onTap: () => Get.to(JadwalView()),
+                          child: Container(
+                            margin: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            width: MediaQuery.of(context).size.width,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black12,
+                                    spreadRadius: 0.1,
+                                    blurRadius: 7,
+                                    offset: Offset(1, 3),
+                                  ),
+                                ]),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    'Jadwal Perkuliahan',
+                                    style: GoogleFonts.poppins(fontSize: 18),
+                                  ),
                                 ),
-                              ]),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  'Jadwal Perkuliahan',
-                                  style: GoogleFonts.poppins(fontSize: 18),
-                                ),
-                              ),
-                              Image.asset(
-                                'assets/image/kuliah.png',
-                                width: 100,
-                              )
-                            ],
+                                Image.asset(
+                                  'assets/image/kuliah.png',
+                                  width: 100,
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(
                           height: 15,
                         ),
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 20),
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          width: MediaQuery.of(context).size.width,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black12,
-                                  spreadRadius: 0.1,
-                                  blurRadius: 7,
-                                  offset: Offset(1, 3),
+                        InkWell(
+                          onTap: () => Get.to(TugasView()),
+                          child: Container(
+                            margin: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            width: MediaQuery.of(context).size.width,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black12,
+                                    spreadRadius: 0.1,
+                                    blurRadius: 7,
+                                    offset: Offset(1, 3),
+                                  ),
+                                ]),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    'Tugas Kuliah',
+                                    style: GoogleFonts.poppins(fontSize: 18),
+                                  ),
                                 ),
-                              ]),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  'Tugas Kuliah',
-                                  style: GoogleFonts.poppins(fontSize: 18),
-                                ),
-                              ),
-                              Image.asset(
-                                'assets/image/tugas.png',
-                                width: 100,
-                              )
-                            ],
+                                Image.asset(
+                                  'assets/image/tugas.png',
+                                  width: 100,
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(
                           height: 15,
                         ),
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 20),
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          width: MediaQuery.of(context).size.width,
-                          height: 150,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black12,
-                                  spreadRadius: 0.1,
-                                  blurRadius: 7,
-                                  offset: Offset(1, 3),
+                        InkWell(
+                          onTap: () => Get.to(MemberView()),
+                          child: Container(
+                            margin: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            width: MediaQuery.of(context).size.width,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black12,
+                                    spreadRadius: 0.1,
+                                    blurRadius: 7,
+                                    offset: Offset(1, 3),
+                                  ),
+                                ]),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    'Our member of Class',
+                                    style: GoogleFonts.poppins(fontSize: 18),
+                                  ),
                                 ),
-                              ]),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  'Our member of Class',
-                                  style: GoogleFonts.poppins(fontSize: 18),
-                                ),
-                              ),
-                              Image.asset(
-                                'assets/image/member.png',
-                                width: 100,
-                              )
-                            ],
+                                Image.asset(
+                                  'assets/image/member.png',
+                                  width: 100,
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(
