@@ -73,11 +73,20 @@ class TugasView extends GetView<TugasController> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text(
-                              data['semester'],
-                              style: GoogleFonts.poppins(
-                                color: Colors.grey,
-                              ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  data['status'],
+                                  style: GoogleFonts.poppins(
+                                    color: Colors.red,
+                                  ),
+                                ),
+                                Text(
+                                  data['dl'],
+                                  style: GoogleFonts.poppins(),
+                                ),
+                              ],
                             ),
                             ElevatedButton(
                               onPressed: () => Get.to(TugasDetail(
