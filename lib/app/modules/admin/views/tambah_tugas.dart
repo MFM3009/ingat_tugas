@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ingat_tugas/app/modules/admin/controllers/admin_controller.dart';
 
-class TambahTugas extends StatelessWidget {
+class TambahTugas extends GetView<AdminController> {
   const TambahTugas({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final addC = Get.put(AdminController());
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red[900],
@@ -17,6 +22,7 @@ class TambahTugas extends StatelessWidget {
         child: ListView(
           children: [
             TextField(
+              controller: addC.tugasC,
               autocorrect: false,
               decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -25,7 +31,7 @@ class TambahTugas extends StatelessWidget {
                   focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.transparent),
                       borderRadius: BorderRadius.circular(15.0)),
-                  hintText: 'Nama Matkul',
+                  hintText: 'Tugas',
                   hintStyle:
                       GoogleFonts.poppins(fontSize: 14.0, color: Colors.grey),
                   filled: true,
@@ -34,18 +40,84 @@ class TambahTugas extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 65,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.grey[200],
-              ),
+            TextField(
+              controller: addC.matkulC,
+              autocorrect: false,
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(15.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(15.0)),
+                  hintText: 'Matkul',
+                  hintStyle:
+                      GoogleFonts.poppins(fontSize: 14.0, color: Colors.grey),
+                  filled: true,
+                  fillColor: Colors.grey[200]),
             ),
             SizedBox(
               height: 15,
             ),
             TextField(
+              controller: addC.dosenC,
+              autocorrect: false,
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(15.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(15.0)),
+                  hintText: 'Dosen',
+                  hintStyle:
+                      GoogleFonts.poppins(fontSize: 14.0, color: Colors.grey),
+                  filled: true,
+                  fillColor: Colors.grey[200]),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            TextField(
+              controller: addC.statusC,
+              autocorrect: false,
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(15.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(15.0)),
+                  hintText: 'Status ex: Mempet',
+                  hintStyle:
+                      GoogleFonts.poppins(fontSize: 14.0, color: Colors.grey),
+                  filled: true,
+                  fillColor: Colors.grey[200]),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            TextField(
+              controller: addC.deadlineC,
+              autocorrect: false,
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(15.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(15.0)),
+                  hintText: 'Deadline',
+                  hintStyle:
+                      GoogleFonts.poppins(fontSize: 14.0, color: Colors.grey),
+                  filled: true,
+                  fillColor: Colors.grey[200]),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            TextField(
+              controller: addC.detailC,
               maxLines: 10,
               autocorrect: false,
               decoration: InputDecoration(
@@ -65,7 +137,7 @@ class TambahTugas extends StatelessWidget {
               height: 15,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => addC.tambahTugas(),
               child: Center(
                 child: Text(
                   'Tambah',

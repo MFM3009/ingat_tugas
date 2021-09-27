@@ -3,27 +3,31 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AdminController extends GetxController {
-  DateTime dueDate = DateTime.now();
-  String dateText = '';
+  TextEditingController tugasC = TextEditingController();
+  TextEditingController matkulC = TextEditingController();
+  TextEditingController dosenC = TextEditingController();
+  TextEditingController statusC = TextEditingController();
+  TextEditingController deadlineC = TextEditingController();
+  TextEditingController detailC = TextEditingController();
 
-  TextEditingController matkul = TextEditingController();
-  TextEditingController deskripsi = TextEditingController();
+  CollectionReference data = FirebaseFirestore.instance.collection('tugas');
 
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  void tambahTugas() {
+    data.add({
+      'title': tugasC.text,
+      'matkul': matkulC.text,
+      'dosen': dosenC.text,
+      'status': statusC.text,
+      'dl': deadlineC.text,
+      'desk': detailC.text,
+    });
 
-  // Future<Null> selectDueDate(BuildContext context) async {
-  //   final picked = await showDatePicker(
-  //     context: context,
-  //     initialDate: dueDate,
-  //     firstDate: DateTime(2021),
-  //     lastDate: DateTime(2080),
-  //   );
-  //   if (picked != null) {
-  //     setState(() {
-  //       dueDate = picked;
-  //       dateText = "${picked.day}/${picked.month}/${picked.year}";
-  //     });
-  //   }
-  // }
-
+    tugasC.text = '';
+    matkulC.text = '';
+    dosenC.text = '';
+    statusC.text = '';
+    deadlineC.text = '';
+    detailC.text = '';
+    Get.snackbar('Success', 'Upload data berhasil!');
+  }
 }
