@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -9,6 +10,8 @@ import 'package:ingat_tugas/app/modules/tugas/views/tugas_view.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
+  // UserCredential userCredential;
+  // HomeView({required this.userCredential});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

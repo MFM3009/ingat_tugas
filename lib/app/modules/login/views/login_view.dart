@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ingat_tugas/app/controllers/logic_controller.dart';
 import 'package:ingat_tugas/app/modules/home/views/home_view.dart';
 import 'package:ingat_tugas/app/modules/register/views/register_view.dart';
 import 'package:ingat_tugas/app/routes/app_pages.dart';
@@ -9,7 +10,11 @@ import 'package:ingat_tugas/app/utils/navbar.dart';
 
 import '../controllers/login_controller.dart';
 
-class LoginView extends GetView<LoginController> {
+class LoginView extends GetView<LogicController> {
+  TextEditingController emailC = TextEditingController();
+  TextEditingController passwordC = TextEditingController();
+
+  final authC = Get.put(LogicController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,6 +73,7 @@ class LoginView extends GetView<LoginController> {
                           height: 30,
                         ),
                         TextField(
+                          controller: emailC,
                           autocorrect: false,
                           decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
@@ -88,6 +94,7 @@ class LoginView extends GetView<LoginController> {
                           height: 10,
                         ),
                         TextField(
+                          controller: passwordC,
                           obscureText: true,
                           autocorrect: false,
                           decoration: InputDecoration(
@@ -109,8 +116,8 @@ class LoginView extends GetView<LoginController> {
                           height: 25,
                         ),
                         ElevatedButton(
-                          onPressed: () => Get.offAll(Navbar(),
-                              transition: Transition.fadeIn),
+                          onPressed: () =>
+                              authC.onLogin(emailC.text, passwordC.text),
                           child: Center(
                             child: Text(
                               'Gass!',

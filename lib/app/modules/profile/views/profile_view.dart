@@ -1,12 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ingat_tugas/app/controllers/logic_controller.dart';
 import 'package:ingat_tugas/app/utils/auth_admin.dart';
 
 import '../controllers/profile_controller.dart';
 
-class ProfileView extends GetView<ProfileController> {
+class ProfileView extends GetView<LogicController> {
+  final logicC = Get.find<LogicController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,6 +70,15 @@ class ProfileView extends GetView<ProfileController> {
                                 ),
                                 textAlign: TextAlign.center,
                               ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              ElevatedButton(
+                                onPressed: () => logicC.onLogout(),
+                                child: Text('Logout'),
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.red[900]),
+                              )
                             ],
                           )),
                           SizedBox(

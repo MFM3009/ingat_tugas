@@ -1,20 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:ingat_tugas/app/modules/home/views/home_view.dart';
+import 'package:ingat_tugas/app/utils/navbar.dart';
 
-class LoginController extends GetxController {
-  //TODO: Implement LoginController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
-}
+class LoginController extends GetxController {}

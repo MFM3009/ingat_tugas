@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ingat_tugas/app/modules/home/views/home_view.dart';
 import 'package:ingat_tugas/app/modules/profile/views/profile_view.dart';
