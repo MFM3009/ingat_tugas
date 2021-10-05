@@ -8,6 +8,8 @@ import 'package:ingat_tugas/app/utils/navbar.dart';
 class LogicController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
 
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+
   TextEditingController emailLogin = TextEditingController();
   TextEditingController passLogin = TextEditingController();
   TextEditingController emailRegister = TextEditingController();
@@ -32,10 +34,16 @@ class LogicController extends GetxController {
 
   void onRegister(String emailR, String passwordR) async {
     try {
-      UserCredential userCredential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: emailR, password: passwordR);
+      await auth.createUserWithEmailAndPassword(
+          email: emailR, password: passwordR);
+
+      CollectionReference users = firestore.collection('users');
+      users.doc(auth.currentUser!.email).set({
+        "uid": auth.currentUser!.uid,
+        "email": auth.currentUser!.email,
+      });
       Get.offAll(Navbar());
-      print(userCredential);
+      print(auth.currentUser);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         Get.snackbar('Error', 'The Password provided is too weak');
