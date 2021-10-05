@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ingat_tugas/app/controllers/logic_controller.dart';
 import 'package:ingat_tugas/app/modules/jadwal/views/jadwal_view.dart';
 import 'package:ingat_tugas/app/modules/member/views/member_view.dart';
 import 'package:ingat_tugas/app/modules/tugas/views/tugas_view.dart';
@@ -12,6 +13,8 @@ import '../controllers/home_controller.dart';
 class HomeView extends GetView<HomeController> {
   // UserCredential userCredential;
   // HomeView({required this.userCredential});
+
+  final authC = Get.find<LogicController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,11 +41,9 @@ class HomeView extends GetView<HomeController> {
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      'Irfan Maulana',
+                      "${authC.user.email}",
                       style: GoogleFonts.poppins(
-                          fontSize: 20,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500),
+                          color: Colors.white, fontWeight: FontWeight.w500),
                     ),
                     Text(
                       'Jangan lupa nugas Cuy!',

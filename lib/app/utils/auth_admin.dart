@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:ingat_tugas/app/modules/admin/views/admin_view.dart';
 
 class AuthAdmin extends StatelessWidget {
-  const AuthAdmin({Key? key}) : super(key: key);
+  final String passwd = "vipclass";
+
+  TextEditingController pass = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,9 @@ class AuthAdmin extends StatelessWidget {
               height: 15,
             ),
             TextField(
+              controller: pass,
               autocorrect: false,
+              obscureText: true,
               decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.transparent),
@@ -40,9 +44,14 @@ class AuthAdmin extends StatelessWidget {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () => Get.to(
-                AdminView(),
-              ),
+              onPressed: () {
+                if (pass.text == passwd) {
+                  Get.to(AdminView());
+                  pass.text = "";
+                } else {
+                  Get.snackbar('Failed', 'Password yang anda masukan salah!');
+                }
+              },
               child: Center(
                 child: Text(
                   'Login',

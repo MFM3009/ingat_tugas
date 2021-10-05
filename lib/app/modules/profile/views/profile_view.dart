@@ -8,7 +8,7 @@ import 'package:ingat_tugas/app/utils/auth_admin.dart';
 
 import '../controllers/profile_controller.dart';
 
-class ProfileView extends GetView<LogicController> {
+class ProfileView extends GetView<ProfileController> {
   final logicC = Get.find<LogicController>();
   @override
   Widget build(BuildContext context) {
@@ -57,14 +57,14 @@ class ProfileView extends GetView<LogicController> {
                                 height: 20,
                               ),
                               Text(
-                                'Irfan Maulana',
+                                'Mahasiswa',
                                 style: GoogleFonts.poppins(
                                   fontSize: 18,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               Text(
-                                'irfan.resimen2018@gmail.com',
+                                "${logicC.user.email}",
                                 style: GoogleFonts.poppins(
                                   color: Colors.grey,
                                 ),
