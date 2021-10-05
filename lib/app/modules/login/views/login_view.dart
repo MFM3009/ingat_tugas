@@ -11,9 +11,6 @@ import 'package:ingat_tugas/app/utils/navbar.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LogicController> {
-  TextEditingController emailC = TextEditingController();
-  TextEditingController passwordC = TextEditingController();
-
   final authC = Get.put(LogicController());
   @override
   Widget build(BuildContext context) {
@@ -73,7 +70,7 @@ class LoginView extends GetView<LogicController> {
                           height: 30,
                         ),
                         TextField(
-                          controller: emailC,
+                          controller: authC.emailLogin,
                           autocorrect: false,
                           decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
@@ -94,7 +91,7 @@ class LoginView extends GetView<LogicController> {
                           height: 10,
                         ),
                         TextField(
-                          controller: passwordC,
+                          controller: authC.passLogin,
                           obscureText: true,
                           autocorrect: false,
                           decoration: InputDecoration(
@@ -116,8 +113,8 @@ class LoginView extends GetView<LogicController> {
                           height: 25,
                         ),
                         ElevatedButton(
-                          onPressed: () =>
-                              authC.onLogin(emailC.text, passwordC.text),
+                          onPressed: () => authC.onLogin(
+                              authC.emailLogin.text, authC.passLogin.text),
                           child: Center(
                             child: Text(
                               'Gass!',
