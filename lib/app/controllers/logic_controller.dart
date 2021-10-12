@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ingat_tugas/app/data/models/user_model.dart';
+import 'package:ingat_tugas/app/modules/login/views/login_view.dart';
 import 'package:ingat_tugas/app/routes/app_pages.dart';
 import 'package:ingat_tugas/app/utils/navbar.dart';
 
@@ -68,6 +69,6 @@ class LogicController extends GetxController {
 
   void onLogout() async {
     await FirebaseAuth.instance.signOut();
-    Get.offAllNamed(Routes.LOGIN);
+    Get.offAll(LoginView());
   }
 }
