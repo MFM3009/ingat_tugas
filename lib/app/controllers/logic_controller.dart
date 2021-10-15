@@ -26,7 +26,15 @@ class LogicController extends GetxController {
       // ignore: unused_local_variable
       UserCredential userCredential = await auth.signInWithEmailAndPassword(
           email: email, password: password);
+
+      // CollectionReference dataUsers = firestore.collection('users');
+      // dataUsers.doc(userCredential.user!.email).update({
+      //   "uid": userCredential.user!.uid,
+      //   "email": userCredential.user!.email,
+      // });
+
       Get.offAll(Navbar(), transition: Transition.fadeIn);
+      print(userCredential.user);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         Get.snackbar('Error', 'User not found');
@@ -55,7 +63,7 @@ class LogicController extends GetxController {
         email: currUserData["email"],
       );
       Get.offAll(Navbar());
-      print(auth.currentUser!.email);
+      print(auth.currentUser);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         Get.snackbar('Error', 'The Password provided is too weak');

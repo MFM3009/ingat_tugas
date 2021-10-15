@@ -113,8 +113,12 @@ class LoginView extends GetView<LogicController> {
                           height: 25,
                         ),
                         ElevatedButton(
-                          onPressed: () => authC.onLogin(
-                              authC.emailLogin.text, authC.passLogin.text),
+                          onPressed: () {
+                            authC.onLogin(
+                                authC.emailLogin.text, authC.passLogin.text);
+                            authC.emailLogin.text = "";
+                            authC.passLogin.text = "";
+                          },
                           child: Center(
                             child: Text(
                               'Gass!',

@@ -112,8 +112,12 @@ class RegisterView extends GetView<LogicController> {
                         height: 25,
                       ),
                       ElevatedButton(
-                        onPressed: () => logicC.onRegister(
-                            emailRegis.text, passwdRegis.text),
+                        onPressed: () {
+                          logicC.onRegister(emailRegis.text, passwdRegis.text);
+
+                          logicC.emailRegister.text = "";
+                          logicC.passRegister.text = "";
+                        },
                         child: Center(
                           child: Text(
                             'Gass!',

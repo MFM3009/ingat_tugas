@@ -68,6 +68,9 @@ class AuthAdmin extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+              height: 22,
+            )
           ],
         ),
       ),
